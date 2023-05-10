@@ -65,16 +65,21 @@ app.post("/notify", async (req: Request, res: Response): Promise<Response> => {
     const action = req.body.action;
     const status = req.body.status;
     const description = req.body.description;
+    console.log(`111`);
     if (status == 'IN_PROGRESS') {
       room.say(`@${userName} \n✅ 您的任务已提交\n✨ ${description}\n🚀 正在快速处理中，请稍后`);
+        console.log(`222`);
     } else if (status == 'FAILURE') {
       room.say(`@${userName} \n❌ 任务执行失败\n✨ ${description}`);
+        console.log(`333`);
     } else if (status == 'SUCCESS') {
       const time = req.body.finishTime - req.body.submitTime;
+        console.log(`444`);
       if (action == 'UPSCALE') {
         await room.say(`@${userName} \n🎨 图片放大，用时: ${displayMilliseconds(time)}\n✨ ${description}`);
         const image = FileBox.fromUrl(req.body.imageUrl);
         room.say(image);
+        console.log(`555`);
       } else {
         const taskId = req.body.id;
         const prompt = req.body.prompt;
