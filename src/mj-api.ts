@@ -4,6 +4,7 @@ const request = new Request({});
 
 export async function submitTask(params: any): Promise<string> {
     let url = "/trigger/submit";
+    
     if (params.action == 'UV') {
         url = "/trigger/submit-uv";
     }
@@ -24,3 +25,4 @@ export async function submitTask(params: any): Promise<string> {
         return "系统异常，请稍后再试";
     }
 }
+
