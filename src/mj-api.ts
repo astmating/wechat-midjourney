@@ -22,12 +22,12 @@ export async function submitTask(params: any): Promise<string> {
         }
         if (message.result != null){
             url = 'http://43.156.94.14:8080/mj/task/'+message.result+'/fetch';
-            const response = await request.get(url);
-            if(response.imageUrl != null){ 
-                return imageUrl;
+            const imageresult = await request.get(url);
+            if(imageresult.imageUrl != null){ 
+                return imageresult.imageUrl;
             }else{
                 await sleep(1000); // 休眠 1 秒
-               const response = await request.get(url);
+               const imageresult. = await request.get(url);
             }
         }
     
