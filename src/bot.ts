@@ -72,15 +72,17 @@ export class Bot {
                 content: content
             });
         } else if (rawText.startsWith('/imagine ')) {
+             while (true) {
              console.log('errorMsg111');
-            const prompt = rawText.substring(9);
-             console.log('errorMsg222');
-            errorMsg = await submitTask({
+             const prompt = rawText.substring(9);
+             console.log(prompt);
+             }
+             errorMsg = await submitTask({
                 state: topic + ':' + talkerName,
                 action: "IMAGINE",
-                prompt: prompt
+                prompt: prompt 
             });
-            console.log('errorMsg444')
+            
         }
         if (errorMsg) {
             const content = `@${talkerName} \n❌ ${errorMsg}`;
