@@ -21,11 +21,12 @@ export async function submitTask(params: any): Promise<string> {
             return `提交任务失败\n - ${message.description}`;
         }
         if (message.result != null){
-            url = 'http://43.156.94.14:8080/mj/task/'+message.result+'/fetch'
+            url = 'http://43.156.94.14:8080/mj/task/'+message.result+'/fetch';
             const response = await request.get(url);
-            if(response.imageUrl != null){
+            if(response.imageUrl != null){ 
                 return imageUrl;
             }else{
+                await sleep(1000); // 休眠 1 秒
                const response = await request.get(url);
             }
         }
