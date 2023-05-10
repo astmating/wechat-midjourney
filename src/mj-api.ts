@@ -28,6 +28,7 @@ export async function submitTask(params: any): Promise<string> {
             console.log(`提交任务错误: ${message.code}, ${message.description}`);
             return `提交任务失败\n - ${message.description}`;
         }
+       
         return "";
     } catch (e) {
         console.error(`submit task failed: ${e}`);
