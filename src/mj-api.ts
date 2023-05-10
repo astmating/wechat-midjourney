@@ -11,7 +11,7 @@ export async function submitTask(params: any): Promise<string> {
     try {
          for (let i = 0; i < =120; i++) {
             console.log(`Iteration ${i}`);
-            console.log(imageUrl)
+            console.log(url)
             await sleep(1000); // 休眠 1 秒
          }
         const response = await request.post(url, params);
