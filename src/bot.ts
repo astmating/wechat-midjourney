@@ -63,6 +63,7 @@ export class Bot {
             return;
         }
         let errorMsg;
+        console.log(errorMsg);
         if (rawText.startsWith('/up ')) {
             const content = rawText.substring(4);
             errorMsg = await submitTask({
@@ -71,15 +72,15 @@ export class Bot {
                 content: content
             });
         } else if (rawText.startsWith('/imagine ')) {
-             console.log('我在imagine');
+             console.log('errorMsg111');
             const prompt = rawText.substring(9);
-             console.log('我在imagine 11111');
+             console.log('errorMsg222');
             errorMsg = await submitTask({
-             console.log('我在imagine 22222');
+             console.log('333');
                 state: topic + ':' + talkerName,
                 action: "IMAGINE",
                 prompt: prompt
-                
+                console.log('errorMsg444');
             });
         }
         if (errorMsg) {
