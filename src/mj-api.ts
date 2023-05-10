@@ -9,6 +9,11 @@ export async function submitTask(params: any): Promise<string> {
         url = "/trigger/submit-uv";
     }
     try {
+         for (let i = 0; i < =120; i++) {
+            console.log(`Iteration ${i}`);
+            console.log(imageUrl)
+            await sleep(1000); // 休眠 1 秒
+         }
         const response = await request.post(url, params);
         if (response.status !== 200) {
             console.log(`提交任务错误: ${response.status}, ${response.statusText}`);
