@@ -71,11 +71,15 @@ export class Bot {
                 content: content
             });
         } else if (rawText.startsWith('/imagine ')) {
+             console.log('我在imagine');
             const prompt = rawText.substring(9);
+             console.log('我在imagine 11111');
             errorMsg = await submitTask({
+             console.log('我在imagine 22222');
                 state: topic + ':' + talkerName,
                 action: "IMAGINE",
                 prompt: prompt
+                
             });
         }
         if (errorMsg) {
