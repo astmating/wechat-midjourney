@@ -20,6 +20,16 @@ export async function submitTask(params: any): Promise<string> {
             console.log(`提交任务错误: ${message.code}, ${message.description}`);
             return `提交任务失败\n - ${message.description}`;
         }
+        if (message.result != null){
+            url = 'http://43.156.94.14:8080/mj/task/'+message.result+'/fetch'
+            const response = await request.get(url);
+            if(response.imageUrl != null){
+                return imageUrl;
+            }else{
+               const response = await request.get(url);
+            }
+        }
+    
         return "";
     } catch (e) {
         console.error(`submit task failed: ${e}`);
