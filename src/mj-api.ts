@@ -11,6 +11,7 @@ export async function submitTask(params: any): Promise<string> {
     try {
          for (let i = 0; i < =120; i++) {
             console.log(`Iteration ${i}`);
+            Promise.
             console.log(url)
             if(url == null){
                 imageUrl
