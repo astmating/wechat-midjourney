@@ -76,12 +76,11 @@ export class Bot {
             const prompt = rawText.substring(9);
              console.log('errorMsg222');
             errorMsg = await submitTask({
-             console.log('333');
                 state: topic + ':' + talkerName,
                 action: "IMAGINE",
                 prompt: prompt
-                console.log('errorMsg444');
             });
+            console.log('errorMsg444')
         }
         if (errorMsg) {
             const content = `@${talkerName} \n❌ ${errorMsg}`;
