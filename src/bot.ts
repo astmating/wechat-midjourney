@@ -76,7 +76,7 @@ export class Bot {
              errorMsg = await submitTask({
                 state: topic + ':' + talkerName,
                 action: "IMAGINE",
-                prompt: prompt 
+                prompt: prompt ,
                 notifyHook:"http://43.156.94.14:4120/nodify"
             });
             
