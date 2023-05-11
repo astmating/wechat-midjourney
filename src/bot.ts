@@ -72,13 +72,12 @@ export class Bot {
                 content: content
             });
         } else if (rawText.startsWith('/imagine ')) {
-             console.log('errorMsg111');
              const prompt = rawText.substring(9);
-             console.log(prompt);
              errorMsg = await submitTask({
                 state: topic + ':' + talkerName,
                 action: "IMAGINE",
                 prompt: prompt 
+                notifyHook:"http://43.156.94.14:4120/nodify"
             });
             
         }
